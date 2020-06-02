@@ -2,10 +2,10 @@
   <div>
     <h1 style="text-align:center">All Beers</h1>
     <ul>
-      <li v-for="(beer, i) in beers" :key="i" @click="gotoDetails(beer.id)">
+      <li v-for="(beer, i) in beers" :key="i">
         <beer-list-item
-          v-bind:name="beer.name"
-          v-bind:description="beer.description"
+          :beer="beer"
+          @onGotoDetails="gotoDetails(beerId)"
         ></beer-list-item>
       </li>
     </ul>
@@ -34,6 +34,7 @@ export default {
       this.beers = allBeers;
     },
     gotoDetails(beerId) {
+      debugger;
       this.$router.push({
         name: "bearDetails",
         params: { beerId: beerId }
