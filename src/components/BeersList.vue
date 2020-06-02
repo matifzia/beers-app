@@ -5,7 +5,7 @@
       <li v-for="(beer, i) in beers" :key="i">
         <beer-list-item
           :beer="beer"
-          @onGotoDetails="gotoDetails(beerId)"
+          @onGotoDetails="gotoDetails"
         ></beer-list-item>
       </li>
     </ul>
